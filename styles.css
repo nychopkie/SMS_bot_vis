@@ -68,6 +68,37 @@ h1{
   font-weight:600;
 }
 
+/* Content section wrapper */
+.content_section{
+  background:transparent;
+  padding:0.8rem 0.6rem;
+  border-radius:8px;
+}
+
+/* Short descriptions that sit under visualizations */
+.caption_description{
+  /* background:rgba(255,255,255,0.65); */
+  padding:0.6rem 0.8rem;
+  border-radius:8px;
+  color:var(--muted);
+  font-size:0.98rem;
+  margin-top:0.6rem;
+  /* box-shadow:0 4px 14px rgba(15,23,36,0.03); */
+}
+
+/* Insights block emphasises key takeaways */
+.insights{
+  margin-top:0.6rem;
+  padding:0.6rem 0.75rem;
+  border-left:4px solid rgba(11,95,255,0.12);
+  background:linear-gradient(90deg, rgba(140,228,255,0.03), transparent);
+  border-radius:6px;
+  color:var(--text);
+}
+
+.insights ul{margin:0.4rem 0 0.2rem 1.1rem}
+.insights li{margin:0.35rem 0}
+
 /* Smaller supporting headings / member list */
 h3{
   margin:0.15rem 0;
