@@ -7,14 +7,14 @@ Group name: Team VISVISVIS
 Members:
 
 ## Overview
+Have you ever wondered whether if the person you are chatting to online really exist? In this day and age, where Large Language Models such as ChatGPT and Gemini are able to converse like a real person, it is liekly that the post you see is automatically generated! This project explores the patterns and phenomenon existing in bot generated contents on social media, and in the end, include a small interactive activity to test your knowledge in bot behaviours.
 
 
 ## Demo
 The project uses Tableau mainly for the constuction of the visualizations. To view the demo of the full visualization, please follow the steps below, or view the video.
 
 ### Set-up
-run the following in terminal
-```python -m http.server 8000```
+View ```main.html``` in browser.
 
 ### Video:
 A quick overview with narration of the full data story conveyed by the visualization. 
