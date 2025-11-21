@@ -13,7 +13,8 @@ Members:
 The project uses Tableau mainly for the constuction of the visualizations. To view the demo of the full visualization, please follow the steps below, or view the video.
 
 ### Set-up
-
+run the following in terminal
+```python -m http.server 8000```
 
 ### Video:
 A quick overview with narration of the full data story conveyed by the visualization. 
