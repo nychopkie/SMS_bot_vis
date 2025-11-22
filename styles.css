@@ -4,6 +4,8 @@
   --accent: #8CE4FF;
   --muted: #6b7280;
   --text: #0f1724;
+  --viz-width: 900px; /* default fixed width for Tableau visualizations */
+  --page-gutter: 0.5rem; /* horizontal page padding (smaller side margins) */
   --max-w: 1100px;
 }
 
@@ -11,7 +13,7 @@
 html,body{height:100%}
 body{
   margin:0;
-  padding:2rem 1rem;
+  padding:2rem var(--page-gutter);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background:var(--bg);
   color:var(--text);
@@ -71,8 +73,17 @@ h1{
 /* Content section wrapper */
 .content_section{
   background:transparent;
-  padding:0.8rem 0.6rem;
-  border-radius:8px;
+  /* Make section full-bleed (span the device viewport width).
+     Body uses `--page-gutter` horizontal padding; to make this element span the
+     full device width we expand its width by the two gutters and shift it left.
+     Using box-sizing and calc keeps layout stable and prevents scrollbars. */
+  max-width:none;
+  width:calc(100% + (var(--page-gutter) * 2));
+  margin-left:calc(-1 * var(--page-gutter));
+  margin-right:calc(-1 * var(--page-gutter));
+  padding:0.8rem var(--page-gutter);
+  border-radius:0;
+  box-sizing:border-box;
 }
 
 /* Short descriptions that sit under visualizations */
@@ -110,8 +121,8 @@ h3{
 
 /* Make main DIV blocks centered and constrained */
 body > div{
-  max-width:var(--max-w);
-  margin:1rem auto;
+  max-width:1500px;
+  margin:0.5rem auto;
   width:100%;
 }
 
@@ -129,11 +140,31 @@ body > div{
   box-shadow:0 10px 30px rgba(15,23,36,0.09);
 }
 
+.tableauPlaceholder{
+  background:var(--card);
+  border-radius:12px;
+  padding:0.6rem;
+  box-shadow:0 6px 18px rgba(15,23,36,0.06);
+  transition:transform .16s ease, box-shadow .16s ease;
+  overflow:hidden;
+  /* fixed, uniform width for all viz containers; scales down to viewport width */
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
 .tableauPlaceholder img,
 .tableauPlaceholder object,
 .tableauViz{
-  width:100%;
-  height:auto;
+  /* child viz should fill the container width and derive height from an aspect ratio
+     The `!important` flags override the inline sizing applied by the Tableau embed script. */
+  width:100% !important;
+  max-width:100% !important;
+  aspect-ratio: 4 / 3 !important;
+  height:auto !important;
   display:block;
   border-radius:8px;
 }
@@ -144,7 +175,7 @@ body > div{
 
 /* Responsive adjustments */
 @media (max-width:640px){
-  body{padding:1rem}
+  body{padding:0.5rem}
   h1{font-size:1.25rem;padding:0.6rem}
   .Title{font-size:1.25rem;padding:0.6rem}
   .course_name{font-size:1.05rem;padding:0.45rem}
