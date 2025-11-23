@@ -4,7 +4,7 @@ In fufiillment for HKUST COMP6411D Course Project (Fall 2025)
 ## Team Information
 Group name: Team VISVISVIS
 
-Members:
+Members: WONG Hiu Tung, MA Sum Yi, WANG Ziting, TSE Wai Chung
 
 ## Overview
 Have you ever wondered whether if the person you are chatting to online really exist? In this day and age, where Large Language Models such as ChatGPT and Gemini are able to converse like a real person, it is liekly that the post you see is automatically generated! This project explores the patterns and phenomenon existing in bot generated contents on social media, and in the end, include a small interactive activity to test your knowledge in bot behaviours.
