@@ -18,6 +18,8 @@ The project uses Tableau mainly for the constuction of the visualizations. To vi
 ### Set-up
 View ```main.html``` in browser.
 
+Or view it here by [clicking this link!](https://nychopkie.github.io/SMS_bot_vis/main.html)
+
 ### Video:
 A quick overview with narration of the full data story conveyed by the visualization. 
 
